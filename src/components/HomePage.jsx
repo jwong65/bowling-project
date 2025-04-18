@@ -17,6 +17,9 @@ export default function HomePage() {
         <Typography variant="h4" component="h1" gutterBottom>
             Welcome to Bowling Score Tracker
         </Typography>
+        <Typography variant="body1">
+            Track your bowling scores and see your progress over time.
+        </Typography>
     </Box>
   )
 }
