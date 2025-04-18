@@ -10,11 +10,12 @@ export default function HomePage() {
         padding: 3,
         marginTop: 2,
         backgroundColor: theme.palette.background.paper,
-        borderRadius: 1,
-        boxShadow: 1
+        borderRadius: theme.shape.borderRadius,
+        boxShadow: 1,
+        borderLeft: `4px solid ${theme.palette.primary.main}`
       }}
     >
-        <Typography variant="h4" component="h1" gutterBottom>
+        <Typography variant="h4" component="h1" gutterBottom sx={{ color: theme.palette.primary.main }}>
             Welcome to Bowling Score Tracker
         </Typography>
         <Typography variant="body1">
