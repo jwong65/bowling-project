@@ -20,7 +20,7 @@ export default function Header() {
             zIndex: (theme) => theme.zIndex.drawer + 1
         }}    
     >
-        <Toolbar>
+        <Toolbar sx={{ justifyContent: 'space-between'}}>
             <Typography
                 variant='h6'
                 component={Link}
@@ -28,7 +28,9 @@ export default function Header() {
                 sx={{ 
                     color: `var(--md-sys-color-primary)`,
                     textDecoration: 'none',
-                    fontWeight: 'bold'
+                    fontWeight: 'bold',
+                    letterSpacing: '0.5px',
+                    justifySelf: 'start'
                 }}
             >
                 Bowling Tracker
@@ -36,16 +38,36 @@ export default function Header() {
             <Box sx={{ 
                 display: 'flex', 
                 justifyContent: 'center',
+                alignItems: 'center',
                 flexGrow: 1,
                 mx: 2
             }}>
                 <Button 
                     component={Link} 
+                    to="/"
+                    aria-current={location.pathname === '/' ? 'page' : undefined}
+                    sx={{ 
+                        color: `var(--md-sys-color-on-surface)`,
+                        borderBottom: location.pathname === '/' ? 
+                            '2px solid var(--md-sys-color-primary)' : '2px solid transparent',
+                        transition: 'border-color 0.3s ease', 
+                        borderRadius: 0, 
+                        px: { xs: 1, sm: 2 },
+                        '&:hover': {
+                            backgroundColor: 'var(--md-sys-color-surface-variant)',
+                        }
+                    }}
+                >
+                    Home
+                </Button>
+                <Button 
+                    component={Link} 
                     to="/scorehistory"
+                    aria-current={location.pathname === '/scorehistory' ? 'page' : undefined}
                     sx={{ 
                         color: `var(--md-sys-color-on-surface)`,
                         borderBottom: location.pathname === '/scorehistory' ? 
-                        '2px solid var(--md-sys-color-primary)' : 'none',
+                        '2px solid var(--md-sys-color-primary)' : '2px solid transparent',
                         '&:hover': {
                             backgroundColor: 'var(--md-sys-color-surface-variant)',
                         }
@@ -57,7 +79,9 @@ export default function Header() {
             <IconButton
                 onClick={toggleTheme}
                 aria-label={themeMode === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'}
-                sx={{ color: `var(--md-sys-color-on-surface)` }}
+                sx={{ color: `var(--md-sys-color-on-surface)`,
+                    ml: { xs: 0, sm: 1}
+                 }}
             >
                 {themeMode === 'dark' ? <Brightness7Icon /> : <Brightness4Icon />}
             </IconButton>
