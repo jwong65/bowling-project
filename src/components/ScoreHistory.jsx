@@ -1,8 +1,6 @@
 import React, {useState} from 'react'
 import { Box, Typography, Paper, Container, Table, TableHead, TableRow, TableContainer, TableCell, TableBody} from '@mui/material'
 
-// import scoreData from "../data/bowlingScores_2024-02-17.json"
-
 export default function ScoreHistory({scoreData, dateString}) {
     const [scores, setScores] = useState(scoreData.scores)
     const formatDate = (dateStr) =>{
