@@ -58,7 +58,7 @@ export default function BowlingHistory() {
                 onChange={handleTabChange}
                 sx={{
                 '& .MuiTab-root': {
-                    color: 'var(--md-sys-color-on-surface)',
+                    color: 'var(--md-sys-color-on-surface-variant)',
                     '&.Mui-selected': {
                     color: 'var(--md-sys-color-primary)',
                     }
