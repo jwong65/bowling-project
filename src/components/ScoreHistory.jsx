@@ -5,6 +5,26 @@ import scoreData from "../data/bowlingScores_2024-02-17.json"
 
 export default function ScoreHistory() {
     const [scores, setScores] = useState(scoreData.scores)
+    const calculatePlayerAverage = (scores) => {
+        const validScores = scores.filter(score => score !== undefined && score !== null);
+        if (validScores.length === 0) return 0;
+        
+        const sum = validScores.reduce((total, score) => total + score, 0);
+        return Math.round((sum / validScores.length) * 10) / 10;
+      };
+      
+      const calculateOverallAverage = () => {
+        let allScores = [];
+        scores.forEach(player => {
+          allScores = [...allScores, ...player.scores.filter(score => score !== undefined && score !== null)];
+        });
+        
+        if (allScores.length === 0) return 0;
+        
+        const sum = allScores.reduce((total, score) => total + score, 0);
+        return Math.round((sum / allScores.length) * 10) / 10;
+      };
+      
   return (
     <Container maxWidth="xl" sx={{ mt: 8 }}>
     <Box
@@ -67,7 +87,7 @@ export default function ScoreHistory() {
                                 >
                                     Game {i + 1}
                                 </TableCell>
-                            ))}                            
+                            ))}                 
                         </TableRow>
                         </TableHead>
                         <TableBody>
@@ -111,6 +131,66 @@ export default function ScoreHistory() {
                         </TableBody>
                 </Table>
             </TableContainer>
+            <Box sx={{ 
+                mt: 4, 
+                pt: 3,
+                borderTop: '1px solid var(--md-sys-color-outline-variant)'
+            }}>
+                <Typography variant="h6" gutterBottom sx={{ color: 'var(--md-sys-color-primary)' }}>
+                    Player Averages
+                </Typography>
+                
+                <Box sx={{ 
+                    display: 'flex', 
+                    flexWrap: 'wrap', 
+                    gap: 2,
+                    mt: 2 
+                }}>
+                    {scores.map(player => (
+                        <Paper
+                            key={player.id}
+                            elevation={1}
+                            sx={{
+                                p: 2,
+                                minWidth: 200,
+                                backgroundColor: 'var(--md-sys-color-surface-container)',
+                                borderLeft: '3px solid var(--md-sys-color-primary)',
+                                color: 'var(--md-sys-color-on-surface)'
+                            }}
+                        >
+                            <Typography variant="subtitle1" sx={{ fontWeight: 'bold' }}>
+                                {player.username}
+                            </Typography>
+                            <Typography variant="h5" sx={{ color: 'var(--md-sys-color-primary)' }}>
+                                {calculatePlayerAverage(player.scores)}
+                            </Typography>
+                            <Typography variant="caption" sx={{ color: 'var(--md-sys-color-on-surface-variant)' }}>
+                                Average score across {player.scores.length} games
+                            </Typography>
+                        </Paper>
+                    ))}
+                </Box>
+                
+                <Box sx={{ 
+                    mt: 3, 
+                    p: 2, 
+                    backgroundColor: 'var(--md-sys-color-surface-container-high)',
+                    borderRadius: 1,
+                    borderLeft: '4px solid var(--md-sys-color-secondary)'
+                }}>
+                    <Typography variant="h6" gutterBottom>
+                        Overall Statistics
+                    </Typography>
+                    <Typography variant="body1">
+                        Overall Average: <Box component="span" sx={{ fontWeight: 'bold', color: 'var(--md-sys-color-secondary)' }}>
+                            {calculateOverallAverage()}
+                        </Box>
+                    </Typography>
+                    <Typography variant="body2" sx={{ color: 'var(--md-sys-color-on-surface-variant)', mt: 1 }}>
+                        Based on {scores.reduce((total, player) => total + player.scores.filter(s => s).length, 0)} total games played
+                    </Typography>
+                </Box>
+            </Box>
         </Paper>
     </Box>
     </Container>

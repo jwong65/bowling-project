@@ -1,5 +1,5 @@
 import React from 'react'
-import { AppBar, Toolbar, Typography, IconButton, Box, useTheme, Button } from '@mui/material'
+import { AppBar, Toolbar, Typography, IconButton, Box, Button } from '@mui/material'
 
 import Brightness4Icon from '@mui/icons-material/Brightness4'; // Dark mode icon
 import Brightness7Icon from '@mui/icons-material/Brightness7'; // Light mode icon
