@@ -1,8 +1,8 @@
 import './App.css'
 import HomePage from './components/HomePage'
 import Header from './components/Header'
-import ScoreHistory from './components/ScoreHistory'  
 import BowlingHistory from './components/BowlingHistory' 
+import BowlingGallery from './components/BowlingGallery'
 
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { ThemeProvider as MuiThemeProvider, createTheme } from '@mui/material'
@@ -29,6 +29,7 @@ function App() {
         <Routes>
           <Route path='/' element={<HomePage/>}/>
           <Route path='/scorehistory' element={<BowlingHistory/>}/>
+          <Route path='/gallery' element={<BowlingGallery/>}/>
         </Routes>
         </BrowserRouter>
       </MuiThemeProvider>

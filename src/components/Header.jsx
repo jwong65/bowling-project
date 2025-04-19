@@ -42,17 +42,14 @@ export default function Header() {
                 flexGrow: 1,
                 mx: 2
             }}>
-                <Button 
+              <Button 
                     component={Link} 
                     to="/"
                     aria-current={location.pathname === '/' ? 'page' : undefined}
                     sx={{ 
                         color: `var(--md-sys-color-on-surface)`,
                         borderBottom: location.pathname === '/' ? 
-                            '2px solid var(--md-sys-color-primary)' : '2px solid transparent',
-                        transition: 'border-color 0.3s ease', 
-                        borderRadius: 0, 
-                        px: { xs: 1, sm: 2 },
+                        '2px solid var(--md-sys-color-primary)' : '2px solid transparent',
                         '&:hover': {
                             backgroundColor: 'var(--md-sys-color-surface-variant)',
                         }
@@ -74,6 +71,21 @@ export default function Header() {
                     }}
                 >
                     Score History
+                </Button>
+                <Button 
+                    component={Link} 
+                    to="/gallery"
+                    aria-current={location.pathname === '/gallery' ? 'page' : undefined}
+                    sx={{ 
+                        color: `var(--md-sys-color-on-surface)`,
+                        borderBottom: location.pathname === '/gallery' ? 
+                        '2px solid var(--md-sys-color-primary)' : '2px solid transparent',
+                        '&:hover': {
+                            backgroundColor: 'var(--md-sys-color-surface-variant)',
+                        }
+                    }}
+                >
+                    Gallery
                 </Button>
             </Box>
             <IconButton
