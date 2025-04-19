@@ -2,7 +2,8 @@ import './App.css'
 import HomePage from './components/HomePage'
 
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import { ThemeProvider, createTheme } from '@mui/material'
+import { ThemeProvider as MuiThemeProvider, createTheme } from '@mui/material'
+import {ThemeProvider} from './context/ThemeContext'
 
 const theme = createTheme({
   palette: {
@@ -18,12 +19,14 @@ const theme = createTheme({
 function App() {
 
   return (
-    <ThemeProvider theme={theme}>
-    <BrowserRouter>
-    <Routes>
-      <Route path='/' element={<HomePage/>}/>
-    </Routes>
-    </BrowserRouter>
+    <ThemeProvider>
+      <MuiThemeProvider theme={theme}>
+        <BrowserRouter>
+        <Routes>
+          <Route path='/' element={<HomePage/>}/>
+        </Routes>
+        </BrowserRouter>
+      </MuiThemeProvider>
     </ThemeProvider>
   )
 }
