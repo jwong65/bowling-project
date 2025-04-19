@@ -1,6 +1,6 @@
-import React, { useContext } from 'react'
-import { Box, Typography, Button, Stack, useTheme } from '@mui/material';
-// import { Link } from 'react-router-dom';
+import React from 'react'
+import { Box, Typography, useTheme } from '@mui/material';
+
 import { useThemeContext } from '../context/ThemeContext';
 
 export default function HomePage() {

@@ -113,7 +113,7 @@ export default function ScoreHistory({scoreData, dateString}) {
                                 >
                                     <TableCell component="th" scope="row"
                                      sx={{ 
-                                        color: 'var(--md-sys-color-on-surface)', // Explicitly set text color
+                                        color: 'var(--md-sys-color-on-surface)', 
                                         fontWeight: 'medium'
                                     }}
                                     >

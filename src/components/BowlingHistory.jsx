@@ -45,16 +45,6 @@ export default function BowlingHistory() {
             </Container>
         );
     }
-    // const scoreSessions = [
-    //     {
-    //       date: "2024-02-17",
-    //       data: scoreData20240217
-    //     },
-    //     {
-    //         date: "2024-03-11",
-    //         data: scoreData20240311
-    //     }
-    // ]
     return (
         <Container maxWidth="xl">
             <Box sx={{ mt: 8, mb: 2 }}>
