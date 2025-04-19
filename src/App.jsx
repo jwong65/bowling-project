@@ -1,7 +1,8 @@
 import './App.css'
 import HomePage from './components/HomePage'
 import Header from './components/Header'
-import ScoreHistory from './components/ScoreHistory'
+import ScoreHistory from './components/ScoreHistory'  
+import BowlingHistory from './components/BowlingHistory' 
 
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { ThemeProvider as MuiThemeProvider, createTheme } from '@mui/material'
@@ -27,7 +28,7 @@ function App() {
         <Header />
         <Routes>
           <Route path='/' element={<HomePage/>}/>
-          <Route path='/scorehistory' element={<ScoreHistory/>}/>
+          <Route path='/scorehistory' element={<BowlingHistory/>}/>
         </Routes>
         </BrowserRouter>
       </MuiThemeProvider>

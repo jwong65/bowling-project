@@ -1,10 +1,17 @@
 import React, {useState} from 'react'
 import { Box, Typography, Paper, Container, Table, TableHead, TableRow, TableContainer, TableCell, TableBody} from '@mui/material'
 
-import scoreData from "../data/bowlingScores_2024-02-17.json"
+// import scoreData from "../data/bowlingScores_2024-02-17.json"
 
-export default function ScoreHistory() {
+export default function ScoreHistory({scoreData, dateString}) {
     const [scores, setScores] = useState(scoreData.scores)
+    const formatDate = (dateStr) =>{
+        const options = {year: 'numeric', month: 'long', day: 'numeric'};
+        return new Date(dateStr).toLocaleDateString(undefined, options);
+    };
+
+    const maxGames = Math.max(...scores.map(player => player.scores.length));
+
     const calculatePlayerAverage = (scores) => {
         const validScores = scores.filter(score => score !== undefined && score !== null);
         if (validScores.length === 0) return 0;
@@ -76,7 +83,7 @@ export default function ScoreHistory() {
                             >
                                 Player
                             </TableCell>
-                            {Array.from({ length: 19 }, (_, i) => (
+                            {Array.from({ length: maxGames }, (_, i) => (
                                 <TableCell 
                                     key={i} 
                                     align="center"
@@ -113,7 +120,7 @@ export default function ScoreHistory() {
                                         {player.username}
                                     </TableCell>
                                     
-                                    {Array.from({ length: 19 }, (_, i) => (
+                                    {Array.from({ length: maxGames }, (_, i) => (
                                         <TableCell key={i} align="center"
                                         sx={{
                                             color: 'var(--md-sys-color-on-surface)',
