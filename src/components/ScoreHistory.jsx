@@ -7,7 +7,9 @@ export default function ScoreHistory({scoreData, dateString}) {
     const [scores, setScores] = useState(scoreData.scores)
     const formatDate = (dateStr) =>{
         const options = {year: 'numeric', month: 'long', day: 'numeric'};
-        return new Date(dateStr).toLocaleDateString(undefined, options);
+        const date = new Date (`${dateStr}T00:00:00`)
+
+        return date.toLocaleDateString(undefined, options);
     };
 
     const maxGames = Math.max(...scores.map(player => player.scores.length));
@@ -52,7 +54,7 @@ export default function ScoreHistory({scoreData, dateString}) {
             gutterBottom
             sx={{ color: 'var(--md-sys-color-primary)' }}
         >
-            February 17, 2024
+            {formatDate(dateString)}
         </Typography>
         <Paper 
             elevation={2} 
