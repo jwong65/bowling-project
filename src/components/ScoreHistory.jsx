@@ -11,26 +11,25 @@ export default function ScoreHistory({scoreData, dateString}) {
     };
 
     const maxGames = Math.max(...scores.map(player => player.scores.length));
-
+   
     const calculatePlayerAverage = (scores) => {
         const validScores = scores.filter(score => score !== undefined && score !== null);
         if (validScores.length === 0) return 0;
         
         const sum = validScores.reduce((total, score) => total + score, 0);
         return Math.round((sum / validScores.length) * 10) / 10;
-      };
-      
-      const calculateOverallAverage = () => {
+    };
+    const calculateOverallAverage = () => {
         let allScores = [];
         scores.forEach(player => {
-          allScores = [...allScores, ...player.scores.filter(score => score !== undefined && score !== null)];
+            allScores = [...allScores, ...player.scores.filter(score => score !== undefined && score !== null)];
         });
         
         if (allScores.length === 0) return 0;
         
         const sum = allScores.reduce((total, score) => total + score, 0);
         return Math.round((sum / allScores.length) * 10) / 10;
-      };
+    };
       
   return (
     <Container maxWidth="xl" sx={{ mt: 8 }}>
@@ -172,7 +171,7 @@ export default function ScoreHistory({scoreData, dateString}) {
                                 {calculatePlayerAverage(player.scores)}
                             </Typography>
                             <Typography variant="caption" sx={{ color: 'var(--md-sys-color-on-surface-variant)' }}>
-                                Average score across {player.scores.length} games
+                                Average score across {player.scores.filter(score => score !== null && score !== undefined).length} games
                             </Typography>
                         </Paper>
                     ))}

@@ -1,0 +1,23 @@
+{
+    "scores": [
+      {
+        "id": 1,
+        "username": "Jaybugkit",
+        "scores": [111, 110, 163, 108, 127, 134, 87, 147, 127, 133, 113, 118, 154, 111, 130, 167, 122, 174, 116, 98],
+        "date": "2024-08-12"
+      },
+      {
+        "id": 2,
+        "username": "Jsun",
+        "scores": [96, 108, 84, 81, 85, 117, 110, 132, 141, 162, 104, 120, 118, 59, 104, 104, 94, 165, 108, 68],
+        "date": "2024-08-12"
+      },
+      {
+        "id": 3,
+        "username": "Vincent_Bow",
+        "scores": [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 208, 173, 186, 193, 43],
+        "date": "2024-08-12"
+      }
+    ]
+  }
+  
