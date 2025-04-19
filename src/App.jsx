@@ -1,5 +1,6 @@
 import './App.css'
 import HomePage from './components/HomePage'
+import Header from './components/Header'
 
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { ThemeProvider as MuiThemeProvider, createTheme } from '@mui/material'
@@ -22,6 +23,7 @@ function App() {
     <ThemeProvider>
       <MuiThemeProvider theme={theme}>
         <BrowserRouter>
+        <Header />
         <Routes>
           <Route path='/' element={<HomePage/>}/>
         </Routes>
