@@ -27,6 +27,13 @@ export default function Header() {
             >
                 Bowling Tracker
             </Typography>
+            <IconButton
+                onClick={toggleTheme}
+                aria-label={themeMode === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'}
+                sx={{ color: `var(--md-sys-color-on-surface)` }}
+            >
+                {themeMode === 'dark' ? <Brightness7Icon /> : <Brightness4Icon />}
+            </IconButton>
         </Toolbar>
     </AppBar>
   )
