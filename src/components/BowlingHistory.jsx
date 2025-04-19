@@ -23,7 +23,7 @@ export default function BowlingHistory() {
                         data: module.default
                     });
                 }
-                sessions.sort((a, b) => new Date(b.date) - new Date(a.date));
+                sessions.sort((a, b) => new Date(a.date) - new Date(b.date));
                 
                 setScoreSessions(sessions);
                 setLoading(false);
