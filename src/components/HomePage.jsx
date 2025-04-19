@@ -15,7 +15,7 @@ export default function HomePage() {
         backgroundColor: 'var(--md-sys-color-background)',
         color: 'var(--md-sys-color-on-background)',
         boxShadow: 1,
-        borderLeft: `4px solid var(--md-sys-color-on-background)`
+        borderLeft: `4px solid var(--md-sys-color-outline)`
       }}
     >
         <Typography 
