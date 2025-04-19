@@ -173,6 +173,26 @@ export default function ScoreHistory({scoreData, dateString}) {
                             <Typography variant="caption" sx={{ color: 'var(--md-sys-color-on-surface-variant)' }}>
                                 Average score across {player.scores.filter(score => score !== null && score !== undefined).length} games
                             </Typography>
+                            {player.statistics && (
+                                <Box sx={{ mt: 1, pt: 1, borderTop: '1px dashed var(--md-sys-color-outline-variant)' }}>
+                                    <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                                        <Typography variant="caption" sx={{ color: 'var(--md-sys-color-on-surface-variant)' }}>
+                                            Strikes:
+                                        </Typography>
+                                        <Typography variant="body2" sx={{ fontWeight: 'medium' }}>
+                                            {player.statistics.strikes || 0}
+                                        </Typography>
+                                    </Box>
+                                    <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                                        <Typography variant="caption" sx={{ color: 'var(--md-sys-color-on-surface-variant)' }}>
+                                            Spares:
+                                        </Typography>
+                                        <Typography variant="body2" sx={{ fontWeight: 'medium' }}>
+                                            {player.statistics.spares || 0}
+                                        </Typography>
+                                    </Box>
+                                </Box>
+                            )}
                         </Paper>
                     ))}
                 </Box>
