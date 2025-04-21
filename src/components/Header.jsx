@@ -87,6 +87,21 @@ export default function Header() {
                 >
                     Gallery
                 </Button>
+                <Button 
+                    component={Link} 
+                    to="/playerstats"
+                    aria-current={location.pathname === '/playerstats' ? 'page' : undefined}
+                    sx={{ 
+                        color: `var(--md-sys-color-on-surface)`,
+                        borderBottom: location.pathname === '/playerstats' ? 
+                        '2px solid var(--md-sys-color-primary)' : '2px solid transparent',
+                        '&:hover': {
+                            backgroundColor: 'var(--md-sys-color-surface-variant)',
+                        }
+                    }}
+                >
+                    Player Stats
+                </Button>
             </Box>
             <IconButton
                 onClick={toggleTheme}
