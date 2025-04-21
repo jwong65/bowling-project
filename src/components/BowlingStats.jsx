@@ -107,7 +107,7 @@ export default function BowlingStats() {
     return (
         <Container maxWidth="xl">
         <Box sx={{ mt: 8, textAlign: 'center' }}>
-            <Typography variant="h5" color="text.secondary">
+            <Typography variant="h5" color= 'var(--md-sys-color-on-surface-variant)'>
             No bowling statistics available
             </Typography>
         </Box>
@@ -121,7 +121,7 @@ export default function BowlingStats() {
             <Typography variant="h4" component="div" gutterBottomsx={{ color: 'var(--md-sys-color-primary)' }}>
                 Bowling Statistics
             </Typography>
-            <Typography variant="subtitle1" color="text.secondary" sx={{ mt: 1 }}>
+            <Typography variant="subtitle1" color="var(--md-sys-color-on-surface-variant)" sx={{ mt: 1 }}>
                 Performance data for {Object.keys(playerStats).length} players
             </Typography>
         </Box>
@@ -131,6 +131,7 @@ export default function BowlingStats() {
         elevation={2}
         sx={{
           backgroundColor: 'var(--md-sys-color-surface)',
+          color: 'var(--md-sys-color-on-surface)',
           borderRadius: 2,
           p: 3,
           mb: 4
@@ -157,31 +158,31 @@ export default function BowlingStats() {
             </Typography>
             <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 3, mt: 2 }}>
               <Box>
-                <Typography variant="body2" color="text.secondary">
+                <Typography variant="body2" color="var(--md-sys-color-on-surface-variant)">
                   Average Score
                 </Typography>
-                <Typography variant="h6" color="primary">
+                <Typography variant="h6" color="var(--md-sys-color-primary)">
                   {player.averageScore}
                 </Typography>
               </Box>
               <Box>
-                <Typography variant="body2" color="text.secondary">
+                <Typography variant="body2" color="var(--md-sys-color-on-surface-variant)">
                   High Score
                 </Typography>
-                <Typography variant="h6" color="success.main">
+                <Typography variant="h6" sx={{ color: 'var(--md-sys-color-tertiary)' }} >
                   {player.highScore}
                 </Typography>
               </Box>
               <Box>
-                <Typography variant="body2" color="text.secondary">
+                <Typography variant="body2" color="var(--md-sys-color-on-surface-variant)">
                   Low Score
                 </Typography>
-                <Typography variant="h6" color="error.main">
+                <Typography variant="h6" sx={{ color: 'var(--md-sys-color-error)' }}>
                   {player.lowScore === 300 ? '-' : player.lowScore}
                 </Typography>
               </Box>
               <Box>
-                <Typography variant="body2" color="text.secondary">
+                <Typography variant="body2" color="var(--md-sys-color-on-surface-variant)">
                   Games Played
                 </Typography>
                 <Typography variant="h6">
@@ -189,18 +190,18 @@ export default function BowlingStats() {
                 </Typography>
               </Box>
               <Box>
-                <Typography variant="body2" color="text.secondary">
+                <Typography variant="body2" color="var(--md-sys-color-on-surface-variant)">
                   Strikes
                 </Typography>
-                <Typography variant="h6" color="info.main">
+                <Typography variant="h6" sx={{ color: 'var(--md-sys-color-tertiary)' }}>
                   {player.strikes}
                 </Typography>
               </Box>
               <Box>
-                <Typography variant="body2" color="text.secondary">
+                <Typography variant="body2" color="var(--md-sys-color-on-surface-variant)">
                   Spares
                 </Typography>
-                <Typography variant="h6" color="secondary.main">
+                <Typography variant="h6" sx={{ color: 'var(--md-sys-color-secondary)' }}>
                   {player.spares}
                 </Typography>
               </Box>

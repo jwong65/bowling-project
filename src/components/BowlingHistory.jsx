@@ -73,7 +73,7 @@ export default function BowlingHistory() {
         return (
             <Container maxWidth="xl">
                 <Box sx={{ mt: 8, textAlign: 'center' }}>
-                    <Typography variant="h5" color="text.secondary">
+                    <Typography variant="h5" color="var(--md-sys-color-on-surface-variant)">
                         No bowling score data available
                     </Typography>
                 </Box>
