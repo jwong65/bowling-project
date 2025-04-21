@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react'
 import ScoreHistory from './ScoreHistory';
-import { Container, Box, Typography, Tabs, Tab, CircularProgress } from '@mui/material';
+import { Container, Box, Typography, Tabs, Tab, CircularProgress, Paper } from '@mui/material';
 
 export default function BowlingHistory() {
     const [selectedTab, setSelectedTab] = useState(0);
@@ -52,6 +52,15 @@ export default function BowlingHistory() {
                 Bowling Score History
             </Typography>
             </Box>
+            <Paper 
+                elevation={2}
+                sx={{
+                    backgroundColor: 'var(--md-sys-color-surface)',
+                    borderRadius: 1,
+                    mb: 3,
+                    overflow: 'hidden'
+                }}
+            >
             <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
             <Tabs 
                 value={selectedTab} 
@@ -89,6 +98,7 @@ export default function BowlingHistory() {
                 )}
             </Box>
             ))}
+            </Paper>
         </Container>
     );
 }
