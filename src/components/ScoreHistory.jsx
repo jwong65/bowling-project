@@ -74,9 +74,11 @@ export default function ScoreHistory({scoreData, dateString}) {
             <TableContainer sx={{ maxHeight: '70vh' }}>
                 <Table stickyHeader sx={{minWidth: 650}}>
                     <TableHead>
-                        <TableRow sx={{backgroundColor: 'var(--md-sys-color-surface-variant)'}}>
+                        <TableRow >
                             <TableCell
-                                sx={{ color: 'var(--md-sys-color-on-surface-variant)',
+                                sx={{ 
+                                    backgroundColor: 'var(--md-sys-color-surface-variant)',
+                                    color: 'var(--md-sys-color-on-surface-variant)',
                                     fontWeight: 'bold'
                                 }}
                             >
@@ -87,6 +89,7 @@ export default function ScoreHistory({scoreData, dateString}) {
                                     key={i} 
                                     align="center"
                                     sx={{ 
+                                        backgroundColor: 'var(--md-sys-color-surface-variant)',
                                         color: 'var(--md-sys-color-on-surface-variant)',
                                         fontWeight: 'bold'
                                     }}
