@@ -117,7 +117,7 @@ export default function BowlingStats() {
 
   return (
     <Container maxWidth="xl">
-        <Box sx={{ mt: 8, textAlign: 'center' }}>
+        <Box sx={{ mt: 8, textAlign: 'center', backgroundColor: 'var(--md-sys-color-surface-container)' }}>
             <Typography variant="h4" component="div" gutterBottomsx={{ color: 'var(--md-sys-color-primary)' }}>
                 Bowling Statistics
             </Typography>
@@ -209,8 +209,8 @@ export default function BowlingStats() {
           </Box>
         ))}
       </Paper>
-      <Box sx={{ mb: 4, textAlign: 'center' }}>
-        <Typography variant="body2" color="text.secondary">
+      <Box sx={{ mb: 4, textAlign: 'center', backgroundColor: 'var(--md-sys-color-surface-container)' }}>
+        <Typography variant="body2" sx={{ color: "var(--md-sys-color-on-surface-variant)" }}>
           Data compiled from {Object.values(playerStats)[0]?.sessions.length || 0} bowling sessions
         </Typography>
       </Box>

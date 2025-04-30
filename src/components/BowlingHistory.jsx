@@ -129,7 +129,6 @@ export default function BowlingHistory() {
                                 margin: '2px',
                                 borderRadius: '4px 4px 0 0',
                                 color: 'var(--md-sys-color-on-surface-variant)',
-                                fontWeight: 'medium',
                             },
                             '& .MuiTabs-indicator': {
                                 backgroundColor: 'var(--md-sys-color-primary)',
