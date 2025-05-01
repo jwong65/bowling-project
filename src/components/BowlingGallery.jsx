@@ -7,6 +7,13 @@ import image1 from "../assets/03-02-2024.jpg"
 export default function BowlingGallery() {
     
   const [images, setImages] = useState(galleryData.images || []);
+  useEffect(()=>{
+    const loadImages = async () =>{
+        try {
+            const imageFIles = import.meta.glob('../assets/gallery/*.{jpg, jpeg, png}')
+        }
+    }
+  })
 
   return (
     <Container maxWidth='xl' sx={{ mt: 8, mb: 4}}>
